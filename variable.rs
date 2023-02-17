@@ -1,13 +1,10 @@
 fn main(){
-    let _immutable_binding = 1;
-    let mut mutable_binding = 1;
-    
-    println!("Before mutation: {}", mutable_binding);
-
-    mutable_binding += 1;
-    
-    println!("After mutation: {}", mutable_binding);
-    /* understanding mut and immutable bindings
-    _immutable_binding += 2;
-    */
+    let long_lived_binding = 1;
+    {
+        let short_lived_binding = 2;
+        
+        println!("innner short: {}", short_lived_binding);
+    }
+    //println!("outer short: {}", short_lived_binding)
+    println!("outer long: {}", long_lived_binding)
 }
